@@ -60,7 +60,7 @@ int main(){
         myguess.push_back(insertchar); //adds the person's guess to the list of guesses
 
 
-        for (int i=0;i<totalspace;i++)
+        for (int i=0;i<totalspace;i++){
             if (std::find(arrayletter.begin(), arrayletter.end(), insertchar) != arrayletter.end()){
                 auto rightnum = std::find(arrayletter.begin(), arrayletter.end(), insertchar); //finds if in array
                 int index = std::distance(arrayletter.begin(),rightnum);
@@ -78,12 +78,17 @@ int main(){
                 std::cout<<stringguess<<"\n";
 
         }
+            if (i>=guessamount-1){
+                std::cout<<"you lost"<<"\n";
+                break;
+            }
 
-    
-        if (stringguess==hangedword)
-            std::cout<<"you won"<<"\n";
-            
-        }
+
+            if (stringguess==hangedword)
+                std::cout<<"you won"<<"\n";
+                break;
+                
+            }
     
     return 0;
 }
